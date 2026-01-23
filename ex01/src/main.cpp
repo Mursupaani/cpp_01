@@ -10,6 +10,6 @@ int	main(void)
 		std::cout << i << ": ";
 		horde[i].announce();
 	}
-	delete horde;
+	delete[] horde;
 	return (EXIT_SUCCESS);
 }

@@ -1,8 +1,5 @@
 #include "Harl.hpp"
 
-Harl::Harl(void)
-{}
-
 void	Harl::complain(std::string level)
 {
 	void(Harl::*func[])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};

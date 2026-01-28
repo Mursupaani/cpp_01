@@ -23,6 +23,7 @@ void	Harl::complain(std::string level)
 
 	switch (lvl) {
 		case Level::NONE:
+			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 			return;
 		case Level::DEBUG:
 			i = DEBUG;

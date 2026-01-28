@@ -1,6 +1,6 @@
 #include "Harl.hpp"
 
-Level hashString(const std::string &level)
+int hashString(const std::string &level)
 {
 	if (level == "debug")
 		return (Level::DEBUG);
@@ -18,31 +18,20 @@ Level hashString(const std::string &level)
 void	Harl::complain(std::string level)
 {
 	void(Harl::*func[])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
-	Level lvl = hashString(level);
-	int	i;
+	int lvl = hashString(level);
 
 	switch (lvl) {
-		case Level::NONE:
+		case 4:
 			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
-			return;
-		case Level::DEBUG:
-			i = DEBUG;
 			break;
-		case Level::INFO:
-			i = INFO;
-			break;
-		case Level::WARNING:
-			i = WARNING;
-			break;
-		case Level::ERROR:
-			i = ERROR;
-			break;
-	}
-	for (int j = 0; j <= i; ++j)
-	{
-		(this->*func[j])();
-		if (j != i)
-			std::cout << std::endl;
+		case 0:
+			(this->*func[0])();
+		case 1:
+			(this->*func[1])();
+		case 2:
+			(this->*func[2])();
+		case 3:
+			(this->*func[3])();
 	}
 }
 

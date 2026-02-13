@@ -12,7 +12,7 @@ void	HumanB::attack(void)
 {
 	if (_weapon == nullptr)
 	{
-		std::cout << _name << " has no weapon" << std::endl;
+		std::cout << _name << " attacks bare handed" << std::endl;
 		return ;
 	}
 	std::cout << _name << " attacks with their " << _weapon->getType() << std::endl;

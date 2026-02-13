@@ -6,12 +6,8 @@ void	replace_substrings(int pos, std::ofstream &outfile, std::string &line, std:
 	{
 		outfile << line.substr(0, pos);
 		outfile << str2;
-		if (str2.length() > 0)
-			line = line.substr(pos + str1.length());
-		else
-			line = line.substr(pos + str1.length());
-		if ((pos = line.find(str1)) != -1)
-			outfile << line.substr(0, pos);
+		line = line.substr(pos + str1.length());
+		pos = line.find(str1);
 	}
 	outfile << line << std::endl;
 }

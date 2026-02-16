@@ -29,9 +29,9 @@ void	replace(std::ifstream &infile, std::ofstream &outfile, std::string str1, st
 
 int	main(int ac, char *av[])
 {
-	std::string	filename = av[1];
-	std::string	str1 = av[2];
-	std::string	str2 = av[3];
+	std::string	filename;
+	std::string	str1;
+	std::string	str2;
 	std::ifstream infile;
 	std::ofstream outfile;
 
@@ -40,6 +40,9 @@ int	main(int ac, char *av[])
 		std::cout << "Use args: <filename>, <str1>, <str2>" << std::endl;
 		return (EXIT_FAILURE);
 	}
+	filename = av[1];
+	str1 = av[2];
+	str2 = av[3];
 	if (str1.length() == 0)
 	{
 		std::cout << "Can't search for an empty string" << std::endl;

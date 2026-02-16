@@ -59,5 +59,7 @@ int	main(int ac, char *av[])
 		return (EXIT_FAILURE);
 	}
 	replace(infile, outfile, str1, str2);
+	infile.close();
+	outfile.close();
 	return (EXIT_SUCCESS);
 }
